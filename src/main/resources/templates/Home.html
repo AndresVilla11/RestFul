@@ -6,15 +6,21 @@
 </head>
 <body>
 	<h2>Ingrese los siguientes datos:</h2>
-	<form action="/creacion/buscar/libro" method="post">
+	<form action="creacion/libro" method="POST">
 		<p>
 			Titulo: <input type="text" name="nombreLibro" size="40">
 		</p>
 		<p>
-			Autor: <input type="text" name="nombreAutor" size="40">
+			Autor: <input type="text" name="autor" size="40">
 		</p>
 		<p>
 			Año: <input type="text" name="year" size="40">
+		</p>
+		<p>
+			Editorial: <input type="text" name="editorial" size="40">
+		</p>
+		<p>
+			Numero de paginas: <input type="text" name="numeroPaginas" size="40">
 		</p>
 		<p>
 			<input type="submit" value="Enviar">

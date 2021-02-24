@@ -1,6 +1,7 @@
 package com.credibanco.assessment.library.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,9 @@ import com.credibanco.assessment.library.service.LibreriaService;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(path = "creacion/")
+@RequestMapping(path = "creacion",
+consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, 
+produces = {MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 public class ControllerRest {
 
 	@Autowired
@@ -24,7 +27,9 @@ public class ControllerRest {
 	@Autowired
 	LibroRepository libroRepository;
 
-	@PostMapping(path = "libro")
+	@PostMapping(path = "libro",
+	        consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, 
+	        produces = {MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<LibroRequest> registrarLibro(@Valid @RequestBody LibroRequest libro) {
 		return libreriaService.GuardarLibro(libro);
 	}
@@ -43,5 +48,4 @@ public class ControllerRest {
 	public ResponseEntity<EditorialRequest> registrarLibro(@Valid @RequestBody EditorialRequest editorial) {
 		return libreriaService.GuardarEditorial(editorial);
 	}
-
 }

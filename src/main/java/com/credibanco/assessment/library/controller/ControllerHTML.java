@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ControllerHTML {
 
-	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/Home" }, method = RequestMethod.GET)
 	public String controlDeInicio() {
 		return "Home";
+	}
+	@RequestMapping(value = { "creacion/libro" }, method = RequestMethod.GET)
+	public String control() {
+		return "redirect:/Home";
 	}
 }

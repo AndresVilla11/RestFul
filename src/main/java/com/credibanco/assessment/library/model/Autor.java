@@ -8,16 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "LIBRO")
+@Table(name = "AUTOR")
 public class Autor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_AUTOR")
 	private long id;
+	
+	@Column(name = "NOMBRE_AUTOR")
 	public String nombreAutor;
+	@Column(name = "ECHA_NACIMIENTO")
 	public String fechaNacimiento;
+	@Column(name = "CIUDAD")
 	public String ciudadProcedencia;
+	@Column(name = "EMAIL")
 	public String email;
 
 	public long getId() {

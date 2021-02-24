@@ -42,7 +42,7 @@ public class LibreriaServiceImpl implements LibreriaService {
 		Libro libro = libroRepository.findByNombreLibro(modelLibro.getNombreLibro());
 		if (libro != null) {
 			libro = libroRepository.save(modelLibro);
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(null, HttpStatus.FOUND);
 		}
 		return null;
 	}

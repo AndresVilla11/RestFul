@@ -9,4 +9,3 @@ public interface AutorRepository extends JpaRepository<Autor, Long>  {
 	public Autor findByNombreAutor(String nombreAutor);
 	public Autor save(AutorRequest modelAutor);
 }
-
