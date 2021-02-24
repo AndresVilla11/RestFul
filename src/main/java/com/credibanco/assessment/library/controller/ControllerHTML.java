@@ -12,12 +12,16 @@ public class ControllerHTML {
 	public String formLibro() {
 		return "Home.html";
 	}
-	@RequestMapping(value = { "/libro/creacion" }, method = RequestMethod.GET)
-	public String controlLibro() {
-		return "redirect:/registrar/libro";
+	@RequestMapping(value = { "/buscar" }, method = RequestMethod.GET)
+	public String formBuscar() {
+		return "buscar.html";
 	}
 	@RequestMapping(value = { "/autor" }, method = RequestMethod.GET)
 	public String formAutor() {
 		return "Autor.html";
+	}
+	@RequestMapping(value = { "/editorial" }, method = RequestMethod.GET)
+	public String formEditorial() {
+		return "Editorial.html";
 	}
 }

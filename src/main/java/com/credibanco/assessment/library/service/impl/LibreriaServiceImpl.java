@@ -1,7 +1,5 @@
 package com.credibanco.assessment.library.service.impl;
 
-import java.io.Console;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,11 +31,20 @@ public class LibreriaServiceImpl implements LibreriaService {
 		Libro libro = libroRepository.findByNombreLibro(modelLibro.getNombreLibro());
 		Autor autor = autorRepository.findByNombreAutor(modelLibro.getAutor());
 		Editorial editorial = editorialRepository.findByNombreEditorial(modelLibro.getEditorial());
-		if ((libro != null) || (autor != null) || (editorial != null)) {
-			
+			if((autor == null)) {
+				System.out.println("El autor no se ha registrado");
+				return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+			}
+			if((editorial == null)) {
+				System.out.println("La editorial no esta registrada");
+				return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+			}
+			if(libro == null) {
+				System.out.println("Libro no encontrado");
+				return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+			}
+			System.out.println(libro);
 			return new ResponseEntity<>(null, HttpStatus.FOUND);
-		}
-		return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 	}
 
 	@Override
@@ -51,8 +58,8 @@ public class LibreriaServiceImpl implements LibreriaService {
 			libro.setNombreLibro(modelLibro.getNombreLibro());
 			libro.setNumeroPaginas(Integer.parseInt(modelLibro.getNumeroPaginas()));
 			libro.setYear(Integer.parseInt(modelLibro.getYear()));
-
-			libro = libroRepository.save(libro);
+		
+			libro = libroRepository.save(libro);	
 			return new ResponseEntity<>(null, HttpStatus.FOUND);
 		}
 		return null;
@@ -66,6 +73,11 @@ public class LibreriaServiceImpl implements LibreriaService {
 			editorial.setNombreEditorial(modelEditorial.getNombreEditorial());
 			editorial.setDireccionCorrespondencia(modelEditorial.getDireccionCorrespondencia());
 			editorial.setEmailEditorial(modelEditorial.getEmailEditorial());
+			if( modelEditorial.getLibrosRegistrados() > 0) {
+				editorial.setLibrosRegistrados(modelEditorial.getLibrosRegistrados());
+			}else {
+				editorial.setLibrosRegistrados(-1);
+			}
 			editorial.setLibrosRegistrados((modelEditorial.getLibrosRegistrados()));
 			editorial.setTelefono(modelEditorial.getTelefono());
 

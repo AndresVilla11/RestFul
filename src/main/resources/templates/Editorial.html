@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>book</title>
+    <title>editorial</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-    <link rel="stylesheet" href="form_style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <h1>Registro para editorial</h1>
       <div id="book"> 
-        <form action="/creacion/editorial" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre" required>
+        <form action="/editorial/creacion" method="post">
+            <label for="nombreEditorial">Nombre:</label>
+            <input type="text" name="nombreEditorial" id="nombreEditorial" placeholder="Ingrese el nombre" required>
             <br>
-            <label for="direccion">Dirección correspondencia:</label>
-            <input type="text" name="direccion" id="direccion" placeholder="Ingrese la direccion" required>
+            <label for="direccionCorrespondencia">Dirección correspondencia:</label>
+            <input type="text" name="direccionCorrespondencia" id="direccionCorrespondencia" placeholder="Ingrese la direccion" required>
             <br>
             <label for="telefono">Telefono:</label>
             <input type="text" name="telefono" id="telefono" placeholder="Ingrese el telefono" required>
@@ -24,8 +24,8 @@
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" placeholder="Ingrese el email">
             <br>
-            <label for="librospub">Max libros publicados:</label>
-            <input type="number" name="librospub" id="librospub" placeholder="Ingrese el max de libros" required>
+            <label for="librosRegistrados">Max libros publicados:</label>
+            <input type="number" name="librosRegistrados" id="librosRegistrados" placeholder="Ingrese el max de libros" required>
             <br>
             <br>
             <button>Registrar</button>

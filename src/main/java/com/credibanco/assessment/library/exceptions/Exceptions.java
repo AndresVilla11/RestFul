@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.servlet.ModelAndView;
 
 public class Exceptions {
 	@ControllerAdvice
@@ -12,9 +11,9 @@ public class Exceptions {
 	  public static final String DEFAULT_ERROR_VIEW = "error";
 
 	  @ExceptionHandler(value = Exception.class)
-	  public ModelAndView
+	  public String
 	  defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
-	    return "redirect:/";
+	    return "error";
 	  }
 	}
 	
