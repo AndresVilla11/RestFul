@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.credibanco.assessment.library.dto.AutorRequest;
 import com.credibanco.assessment.library.model.Autor;
+import com.credibanco.assessment.library.model.Libro;
 
 public interface AutorRepository extends JpaRepository<Autor, Long>  {
 	public Autor findByNombreAutor(String nombreAutor);

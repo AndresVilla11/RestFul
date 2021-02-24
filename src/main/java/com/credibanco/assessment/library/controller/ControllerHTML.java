@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ControllerHTML {
 
 	@RequestMapping(value = { "/libro" }, method = RequestMethod.GET)
-	public String controlDeInicio() {
+	public String formLibro() {
 		return "Home.html";
 	}
-	@RequestMapping(value = { "creacion/libro" }, method = RequestMethod.GET)
-	public String control() {
+	@RequestMapping(value = { "/libro/creacion" }, method = RequestMethod.GET)
+	public String controlLibro() {
 		return "redirect:/registrar/libro";
 	}
-	@RequestMapping(value = { "error" }, method = RequestMethod.GET)
-	public String error() {
-		return "redirect:/Home";
+	@RequestMapping(value = { "/autor" }, method = RequestMethod.GET)
+	public String formAutor() {
+		return "Autor.html";
 	}
 }

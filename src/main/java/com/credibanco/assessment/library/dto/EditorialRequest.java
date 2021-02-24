@@ -1,6 +1,7 @@
 package com.credibanco.assessment.library.dto;
 
 public class EditorialRequest {
+	
 	private String nombreEditorial;
 	private String direccionCorrespondencia;
 	private int telefono;
