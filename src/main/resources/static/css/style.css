@@ -1,1 +1,38 @@
-@charset "ISO-8859-1";
+body{
+    margin-top: 20px !important; 
+    background-color: #14213d;
+}
+h1{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    border:solid 3px #fca311 !important;
+    width: fit-content;
+    
+}
+
+#book{
+    padding: 70px 450px;
+    text-align: center;
+}
+
+input, textarea, select{
+    border: 1px dotted #999;
+    border-radius: 5px;
+    -webkit-appearance: none;
+   
+}
+
+label{
+    color: #ffffff;
+}
+
+button{
+    background-color: #fca311;
+    color: #e5e5e5;
+}
+button:hover
+{
+    color:black
+}

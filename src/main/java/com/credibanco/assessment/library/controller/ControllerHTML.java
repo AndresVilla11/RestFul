@@ -9,10 +9,14 @@ public class ControllerHTML {
 
 	@RequestMapping(value = { "/", "/Home" }, method = RequestMethod.GET)
 	public String controlDeInicio() {
-		return "Home";
+		return "Home.html";
 	}
 	@RequestMapping(value = { "creacion/libro" }, method = RequestMethod.GET)
 	public String control() {
+		return "redirect:/Home";
+	}
+	@RequestMapping(value = { "error" }, method = RequestMethod.GET)
+	public String error() {
 		return "redirect:/Home";
 	}
 }

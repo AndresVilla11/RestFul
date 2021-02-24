@@ -17,9 +17,7 @@ import com.credibanco.assessment.library.service.LibreriaService;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(path = "creacion",
-consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, 
-produces = {MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path = "creacion")
 public class ControllerRest {
 
 	@Autowired
@@ -27,24 +25,22 @@ public class ControllerRest {
 	@Autowired
 	LibroRepository libroRepository;
 
-	@PostMapping(path = "libro",
-	        consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, 
-	        produces = {MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+	@PostMapping(path = "/libro")
 	public ResponseEntity<LibroRequest> registrarLibro(@Valid @RequestBody LibroRequest libro) {
 		return libreriaService.GuardarLibro(libro);
 	}
 
-	@PostMapping(path = "buscar/libro")
+	@PostMapping(path = "/buscar/libro")
 	public ResponseEntity<LibroRequest> buscarLibro(@Valid @RequestBody LibroRequest libro) {
 		return libreriaService.BuscarLibro(libro);
 	}
 
-	@PostMapping(path = "autor")
+	@PostMapping(path = "/autor")
 	public ResponseEntity<AutorRequest> registrarLibro(@Valid @RequestBody AutorRequest autor) {
 		return libreriaService.GuardarAutor(autor);
 	}
 
-	@PostMapping(path = "editorial")
+	@PostMapping(path = "/editorial")
 	public ResponseEntity<EditorialRequest> registrarLibro(@Valid @RequestBody EditorialRequest editorial) {
 		return libreriaService.GuardarEditorial(editorial);
 	}

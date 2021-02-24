@@ -8,7 +8,7 @@ import com.credibanco.assessment.library.model.Libro;
 public interface LibroRepository extends JpaRepository<Libro, Long> {
 	public Libro findByNombreLibro(String nombreLibro);
 
-	public Libro findByYear(int year);
+	public Libro findByYear(String string);
 
 	public Libro findByAutor(String autor);
 

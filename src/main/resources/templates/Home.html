@@ -1,30 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-	<h2>Ingrese los siguientes datos:</h2>
-	<form action="creacion/libro" method="POST">
-		<p>
-			Titulo: <input type="text" name="nombreLibro" size="40">
-		</p>
-		<p>
-			Autor: <input type="text" name="autor" size="40">
-		</p>
-		<p>
-			Año: <input type="text" name="year" size="40">
-		</p>
-		<p>
-			Editorial: <input type="text" name="editorial" size="40">
-		</p>
-		<p>
-			Numero de paginas: <input type="text" name="numeroPaginas" size="40">
-		</p>
-		<p>
-			<input type="submit" value="Enviar">
-		</p>
-	</form>
+    <h1>Registro para libros</h1>
+      <div id="book"> 
+        <form action="/creacion/libro">
+            <label for="titulo">Titulo:</label>
+            <input type="text" name="nombreLibro" id="nombreLibro" placeholder="Ingrese un titulo" required>
+            <br>
+            <label for="año">Año:</label>
+            <input type="text" name="year" id="year" placeholder="Ingrese el año">
+            <br>
+            <label for="genero">Genero:</label>
+            <input type="text" name="genero" id="genero" placeholder="Ingrese el genero" required>
+            <br>
+            <label for="npaginas">Número de pags:</label>
+            <input type="text" name="numeroPaginas" id="numeroPaginas" placeholder="Ingrese el num de paginas" required>
+            <br>
+            <label for="titulo">Editorial:</label>
+            <input type="text" name="editorial" id="editorial" placeholder="Ingrese la editorial">
+            <br>
+            <label for="titulo">Autor:</label>
+            <input type="text" name="autor" id="autor" placeholder="Ingrese el autor" required>
+            <br>
+            <br>
+            <button>Registrar</button>
+        </form>
+    </div>
 </body>
 </html>

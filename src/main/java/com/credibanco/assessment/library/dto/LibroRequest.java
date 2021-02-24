@@ -1,21 +1,19 @@
 package com.credibanco.assessment.library.dto;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 
 public class LibroRequest {
 
 	private String nombreLibro;
-	@Positive
-	private int year;
+	private String year;
 	private String genero;
-	private int numeroPaginas;
+	private String numeroPaginas;
 	@NotNull
 	private String editorial;
 	@NotNull
 	private String autor;
 
-	public LibroRequest(String nombreLibro, int year, String genero, int numeroPaginas, String editorial, String autor) {
+	public LibroRequest(String nombreLibro, String year, String genero, String numeroPaginas, String editorial, String autor) {
 		this.nombreLibro = nombreLibro;
 		this.year = year;
 		this.genero = genero;
@@ -32,11 +30,11 @@ public class LibroRequest {
 		this.nombreLibro = nombreLibro;
 	}
 
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
 
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 
@@ -48,11 +46,11 @@ public class LibroRequest {
 		this.genero = genero;
 	}
 
-	public int getNumeroPaginas() {
+	public String getNumeroPaginas() {
 		return numeroPaginas;
 	}
 
-	public void setNumeroPaginas(int numeroPaginas) {
+	public void setNumeroPaginas(String numeroPaginas) {
 		this.numeroPaginas = numeroPaginas;
 	}
 
