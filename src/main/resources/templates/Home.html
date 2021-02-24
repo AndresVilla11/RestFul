@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>book</title>
@@ -11,17 +10,17 @@
 <body>
     <h1>Registro para libros</h1>
       <div id="book"> 
-        <form action="/creacion/libro">
+        <form action="/creacion/libro" method="post">
             <label for="titulo">Titulo:</label>
             <input type="text" name="nombreLibro" id="nombreLibro" placeholder="Ingrese un titulo" required>
             <br>
-            <label for="aÃ±o">AÃ±o:</label>
-            <input type="text" name="year" id="year" placeholder="Ingrese el aÃ±o">
+            <label for="año">Año:</label>
+            <input type="text" name="year" id="year" placeholder="Ingrese el año">
             <br>
             <label for="genero">Genero:</label>
             <input type="text" name="genero" id="genero" placeholder="Ingrese el genero" required>
             <br>
-            <label for="npaginas">NÃºmero de pags:</label>
+            <label for="npaginas">Número de pags:</label>
             <input type="text" name="numeroPaginas" id="numeroPaginas" placeholder="Ingrese el num de paginas" required>
             <br>
             <label for="titulo">Editorial:</label>
